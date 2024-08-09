@@ -1,0 +1,29 @@
+{
+  "canisters": {
+    "votecrypt_backend": {
+      "main": "src/votecrypt_backend/main.mo",
+      "type": "motoko"
+    },
+    "votecrypt_frontend": {
+      "dependencies": [
+        "votecrypt_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/votecrypt_frontend/src/index.html"
+      },
+      "source": [
+        "src/votecrypt_frontend/assets",
+        "dist/votecrypt_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
