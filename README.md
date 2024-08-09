@@ -1,9 +1,17 @@
 # votecrypt
 
-Welcome to your new votecrypt project and to the internet computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.
+The MerkleVoting smart contract was written using the Motoko programming language and deployed on the Internet Computer (IC) blockchain. The contract utilizes two main actors, a Voter actor and a Candidate actor. The smart contract has an owner that can add candidates and administer the election phases.
 
-To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.
+The Internet Computer blockchain was chosen due to its significant transaction processing capabilities and low transaction fees. Using the IC would make the voting process scalable and financially feasible for any election. The IC's built-in identity management system (IC ID) could further enhance the voter experience by providing seamless authentication and KYC (Know Your Customer) capabilities.
 
+By utilizing Merkle trees for voter eligibility verification, the smart contract provides an efficient way of handling large amounts of voter data. Using the setMerkleRoot function, the contract owner can set the Merkle root (generated offline) for the Merkle proofs to be checked against. When voting, the voter has to submit the Merkle proof (to be generated in the UI backend) together with the candidate number that should receive the vote. The Merkle proof is then checked against the Merkle root using the built-in cryptographic functions provided by the Motoko language.
+
+The key benefits of using the Internet Computer blockchain and the Motoko programming language for this use case are:
+
+Scalability: The Internet Computer's high transaction processing capabilities and low transaction fees make it well-suited for large-scale voting applications.
+Efficiency: The use of Merkle trees for voter eligibility verification allows for quick and efficient validation of voter data, even for large voter populations.
+Security: The Motoko language and the Internet Computer's built-in security features provide a secure environment for running the voting smart contract and processing sensitive voter data.
+Native Identity Management: The IC ID system simplifies the voter authentication and KYC processes, improving the overall user experience.
 To learn more before you start working with votecrypt, see the following documentation available online:
 
 - [Quick Start](https://internetcomputer.org/docs/current/developer-docs/quickstart/hello10mins)
@@ -12,7 +20,7 @@ To learn more before you start working with votecrypt, see the following documen
 - [Motoko Language Quick Reference](https://internetcomputer.org/docs/current/references/motoko-ref/)
 - [JavaScript API Reference](https://erxue-5aaaa-aaaab-qaagq-cai.raw.icp0.io)
 
-If you want to start working on your project right away, you might want to try the following commands:
+If you want to start working on the project right away, you might want to try the following commands:
 
 ```bash
 cd votecrypt/
